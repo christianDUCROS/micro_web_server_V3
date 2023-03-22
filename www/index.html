@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head> <title>Commandes ROBOT</title> 
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css" />
+    <link href="images/favicon.ico" rel="shortcut icon" sizes="any"/>
+    <script src="script.js"></script>  
+
+	</head> 
+    <body> 
+    <div class="centre"> 
+		<h1>Contrôle ROBOT</h1> 
+       <br>
+       
+        
+		<h2>Commandes robot</h2>
+		<table class="tabcenter">
+		<tr>
+			<td></td>
+            <td><input class="favorite styled" type ="button"  value="Avancer" onclick="fct_Avancer()"></td>
+            <td></td>
+        </tr>
+		<tr>
+			<td><input class="favorite styled" type ="button"  value="Gauche" onclick="fct_Gauche()"></td>
+            <td><input class="favorite styled" type ="button"  value="Stop" onclick="fct_Stop()"></td>
+            <td><input class="favorite styled" type ="button"  value="Droite" onclick="fct_Droite()"></td>
+        </tr>
+		<tr>
+			<td></td>
+            <td><input class="favorite styled"  type ="button"  value="Reculer" onclick="fct_Reculer()"></td>
+            <td></td>
+        </tr>
+		</table>
+        
+        
+        <h2>Vitesses</h2>
+        <label>Vitesse en translation Avancer-reculer</label><br>
+        <input type="range" orient="vertical" onchange="fct_vitesseT()"  min="0" max="255" step="5" id="id_vitesseT" value="{{vitesseT}}" >
+        <span id="id_affichage_vitesseT">{{vitesseT}}</span> 
+        <br>
+        <label>Vitesse en rotation gauche/droite</label><br>
+       <input type="range" orient="vertical" onchange="fct_vitesseR()"  min="0" max="255" step="5" id="id_vitesseR" value="{{vitesseR}}" >
+        <span id="id_affichage_vitesseR">{{vitesseR}}</span> 
+        <br>
+        <br>
+        <label for="hauteur_tourelle">Hauteur tourelle</label>
+        <input type="text" id="id_tourelle" name="hauteur_tourelle" size="10" >&nbsp&nbsp
+        <input class="favorite styled"  type ="button"  value="Valider" onclick="fct_tourelle()">
+        <br>
+		<h2>Informations capteurs robot </h2>
+		<div style="width:100%; text-align:center;">
+		<table>
+		<tr>
+			<td >Distance : </td> 
+            <td> {{distance}}</td>
+        </tr>
+		<tr>
+			<td>Position / ligne : </td>
+            <td>{{position_ligne}}</td>
+    	</tr>
+		</table>
+		</div>
+         <br>
+         <div><img src='images/robot.jpg'  /></div>
+	</div>
+	</body>
+</html>
